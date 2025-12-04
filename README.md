@@ -184,7 +184,7 @@ Applies global CSS styles based on recipe variant class combinations.
 | `recipe`             | `RuntimeFn`                             | Yes      | The vanilla-extract recipe function                                               |
 | `selectorGenerators` | `Record<string, (v: string) => string>` | Yes      | Functions that generate CSS selectors. Must include `"&"` key.                    |
 | `base`               | `StyleRuleWithSelectors`                | No       | Base styles applied to all elements (supports `selectors` for state-based styles) |
-| `compoundVariants`   | `Array<{ variants, style }>`            | Yes      | Variant-specific styles                                                           |
+| `compoundVariants`   | `Array<{ variants, style }>`            | No       | Variant-specific styles                                                           |
 
 #### Selector Generators
 
