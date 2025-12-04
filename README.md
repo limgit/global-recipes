@@ -45,16 +45,18 @@ globalRecipe({
 ## Installation
 
 ```bash
-# npm
 npm install global-recipes @vanilla-extract/css @vanilla-extract/recipes
+```
 
-# yarn
+```bash
 yarn add global-recipes @vanilla-extract/css @vanilla-extract/recipes
+```
 
-# pnpm
+```bash
 pnpm add global-recipes @vanilla-extract/css @vanilla-extract/recipes
+```
 
-# bun
+```bash
 bun add global-recipes @vanilla-extract/css @vanilla-extract/recipes
 ```
 
