@@ -1,0 +1,43 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  id-token: write # Required for OIDC
+  contents: read
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+      - name: Set node version in .nvmrc
+        run: |
+          NODE_VERSION=$(awk -F'"' '/^node/ {print $2}' mise.toml)
+          echo "Node version: $NODE_VERSION"
+          echo "v$NODE_VERSION" > .nvmrc
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: .nvmrc
+          cache: "pnpm"
+          registry-url: "https://registry.npmjs.org"
+      # To ensure npm 11.5.1 or later is installed
+      - name: Update npm
+        run: npm install -g npm@latest
+      - name: Install dependencies
+        run: pnpm install
+
+      # prepublishOnly will care about the build
+      - name: Publish to npm
+        run: npm publish
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          generate_release_notes: true
