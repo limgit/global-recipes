@@ -1,10 +1,10 @@
 # global-recipes
 
-Apply global CSS styles based on [`@vanilla-extract/recipes`](https://vanilla-extract.style/documentation/packages/recipes/) variant classes — style children, pseudo-states, and siblings by variant.
+Apply global CSS styles based on [`@vanilla-extract/recipes`](https://vanilla-extract.style/documentation/packages/recipes/) variant classes — style children and siblings by variant.
 
 ## Why?
 
-Vanilla Extract by default [only allows selectors that target the element itself](https://vanilla-extract.style/documentation/styling/#complex-selectors). To style other elements (children, siblings, pseudo-states), you must use `globalStyle` with interpolated class selectors:
+Vanilla Extract by default [only allows selectors that target the element itself](https://vanilla-extract.style/documentation/styling/#complex-selectors). To style other elements (children, siblings), you must use `globalStyle` with interpolated class selectors:
 
 ```ts
 // Without global-recipes: verbose and hard to maintain

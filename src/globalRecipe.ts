@@ -92,7 +92,7 @@ function buildVariantSelector<TRecipe extends RuntimeFn<VariantGroups>>(
  * Applies global CSS styles based on recipe variant classes.
  *
  * Like `globalStyle`, but generates styles for each recipe variant combination.
- * Use selector generators to target any elements - children, siblings, pseudo-states, etc.
+ * Use selector generators to target any elements - children, siblings, etc.
  *
  * Features:
  * - Type-safe variant names and values (inferred from recipe)
