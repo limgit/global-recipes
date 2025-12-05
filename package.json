@@ -1,6 +1,6 @@
 {
   "name": "global-recipes",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "type": "module",
   "description": "Apply global CSS styles based on @vanilla-extract/recipes variant classes - style children and siblings by variant",
   "keywords": [
